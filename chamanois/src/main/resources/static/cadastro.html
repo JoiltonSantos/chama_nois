@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro - Chama Nois</title>
+	<link rel="shortcut icon" href="https://raw.githubusercontent.com/Chama-Nois/Chama-Nois/Joilton/imagens/icon.png"
+		type="image/x-icon">
+	<link rel="stylesheet" href="styles/cadastro.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column" style="min-height: 100vh;">
+	<header class="rounded-bottom" style="background-color: #ff9900;">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="#">
+				<img src="https://raw.githubusercontent.com/Chama-Nois/Chama-Nois/Joilton/imagens/icon.png" alt=""
+					width="100">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav text-center mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html" target="_self">HOME</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/produtos" target="_self">PRODUTOS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/empresas" target="_self">EMPRESAS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contato.html" target="_self">CONTATO</a>
+					</li>
+				</ul>
+				<span class="navbar d-inline-block float-left">
+					<a href="entrar.html" class="btn btn-outline-dark mr-3" target="_self">ENTRAR</a>
+				</span>
+				<span class="navbar d-inline-block float-right">
+					<a href="#" class="btn btn-outline-dark" target="_self">CADASTRAR</a>
+				</span>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container my-4">
+		<form class="bg-light p-4 rounded shadow" action="/cadastrar-usuario" method="post">
+			<label for="nomeUsuario" class="form-label">Nome:</label>
+			<input type="text" id="nomeUsuario" name="nomeUsuario" class="form-control mb-3" required>
+
+			<label for="cpfUsuario" class="form-label">CPF:</label>
+			<input type="text" id="cpfUsuario" name="cpfUsuario" class="form-control mb-3" required>
+
+			<label for="enderecoUsuario" class="form-label">Endereço:</label>
+			<input type="text" id="enderecoUsuario" name="enderecoUsuario" class="form-control mb-3" required>
+
+			<label for="telefoneUsuario" class="form-label">Telefone:</label>
+			<input type="text" id="telefoneUsuario" name="telefoneUsuario" class="form-control mb-3" required>
+
+			<label for="emailUsuario" class="form-label">E-mail:</label>
+			<input type="email" id="emailUsuario" name="emailUsuario" class="form-control mb-3" required>
+
+			<label for="senhaUsuario" class="form-label">Senha:</label>
+			<input type="password" id="senhaUsuario" name="senhaUsuario" class="form-control mb-3" required>
+
+			<div class="mb-3 form-check">
+				<input type="checkbox" id="aceitarTermos" class="form-check-input" required>
+				<label for="aceitarTermos" class="form-check-label">Eu li e concordo com os termos de serviço</label>
+				<a href="#">Termos de serviço</a>
+			</div>
+
+			<div class="mb-3 form-check">
+				<input type="checkbox" id="autorizacao" class="form-check-input" required>
+				<label for="autorizacao" class="form-check-label">Autorizo o uso dos meus dados para fins de
+					contato e promoções</label>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Criar Conta</button>
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965Dz
