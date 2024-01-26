@@ -33,7 +33,7 @@ public class ProdutosController {
 	public String listProdutos(Model model) {
 		List<Produtos> produtos = produtosService.getAllProdutos();
 		model.addAttribute("produtos", produtos);
-		return "listarProdutos";
+		return "pages/produtos/listarProdutos";
 	}
 
 	@GetMapping("/novo")
@@ -42,7 +42,7 @@ public class ProdutosController {
 		List<Empresas> empresas = empresasService.getAllEmpresas();
 		model.addAttribute("produtos", produtos);
 		model.addAttribute("empresas", empresas);
-		return "formProdutos";
+		return "pages/produtos/formProdutos";
 	}
 
 	@PostMapping("/salvar")
@@ -57,7 +57,7 @@ public class ProdutosController {
 		Produtos produtos = produtosService.getProdutoById(id);
 		model.addAttribute("produtos", produtos);
 		model.addAttribute("empresas", empresasService.getAllEmpresas());
-		return "atualizarProdutos";
+		return "pages/produtos/atualizarProdutos";
 	}
 
 	@PostMapping("/editar/{id}")

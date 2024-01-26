@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,49 +7,16 @@
 	<title>Cadastro - Chama Nois</title>
 	<link rel="shortcut icon" href="https://raw.githubusercontent.com/Chama-Nois/Chama-Nois/Joilton/imagens/icon.png"
 		type="image/x-icon">
-	<link rel="stylesheet" href="styles/cadastro.css">
+	<link rel="stylesheet" th:href="@{/styles/cadastro.css}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body class="d-flex flex-column" style="min-height: 100vh;">
-	<header class="rounded-bottom" style="background-color: #ff9900;">
-		<nav class="navbar navbar-expand-lg navbar-light">
-			<a class="navbar-brand" href="#">
-				<img src="https://raw.githubusercontent.com/Chama-Nois/Chama-Nois/Joilton/imagens/icon.png" alt=""
-					width="100">
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav text-center mx-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html" target="_self">HOME</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/produtos" target="_self">PRODUTOS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/empresas" target="_self">EMPRESAS</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contato.html" target="_self">CONTATO</a>
-					</li>
-				</ul>
-				<span class="navbar d-inline-block float-left">
-					<a href="entrar.html" class="btn btn-outline-dark mr-3" target="_self">ENTRAR</a>
-				</span>
-				<span class="navbar d-inline-block float-right">
-					<a href="#" class="btn btn-outline-dark" target="_self">CADASTRAR</a>
-				</span>
-			</div>
-		</nav>
-	</header>
+	<div th:replace="~{fragments/navbar :: navbar}"></div>
 
 	<div class="container my-4">
-		<form class="bg-light p-4 rounded shadow" action="/cadastrar-usuario" method="post">
+		<form class="bg-light p-4 rounded shadow" th:action="@{/usuarios/novo/salvar}" method="post">
 			<label for="nomeUsuario" class="form-label">Nome:</label>
 			<input type="text" id="nomeUsuario" name="nomeUsuario" class="form-control mb-3" required>
 
@@ -84,4 +51,15 @@
 		</form>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965Dz
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

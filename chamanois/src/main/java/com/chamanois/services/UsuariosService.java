@@ -2,14 +2,17 @@ package com.chamanois.services;
 
 import java.util.List;
 
+import com.chamanois.dto.UsuariosDTO;
 import com.chamanois.model.Usuarios;
 
 public interface UsuariosService {
-	List<Usuarios> getAllUsuarios();
+	List<UsuariosDTO> findAllUsuarios();
 
-	Usuarios getUsuarioById(Long idUsuario);
+	void saveUsuario(UsuariosDTO usuarioDTO);
+	
+	Usuarios findUserById(Long idUsuario);
 
-	Usuarios saveUsuario(Usuarios usuario);
+	Usuarios findUserByEmail(String emailUsuario);
 
 	Usuarios updateUsuario(Long idUsuario, Usuarios usuarioAtualizado);
 

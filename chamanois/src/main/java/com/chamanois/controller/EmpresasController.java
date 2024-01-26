@@ -25,14 +25,14 @@ public class EmpresasController {
 	public String listEmpresas(Model model) {
 		List<Empresas> empresas = empresasService.getAllEmpresas();
 		model.addAttribute("empresas", empresas);
-		return "listarEmpresas";
+		return "pages/empresas/listarEmpresas";
 	}
 
 	@GetMapping("/nova")
 	public String showFormForAdd(Model model) {
 		Empresas empresas = new Empresas();
 		model.addAttribute("empresas", empresas);
-		return "formEmpresas";
+		return "pages/empresas/formEmpresas";
 	}
 
 	@PostMapping("/salvar")
@@ -45,7 +45,7 @@ public class EmpresasController {
 	public String showFormForUpdate(@PathVariable Long id, Model model) {
 		Empresas empresas = empresasService.getEmpresaById(id);
 		model.addAttribute("empresas", empresas);
-		return "atualizarEmpresas";
+		return "pages/empresas/atualizarEmpresas";
 	}
 
 	@PostMapping("/editar/{id}")

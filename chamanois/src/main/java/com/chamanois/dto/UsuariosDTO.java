@@ -1,25 +1,12 @@
-package com.chamanois.model;
+package com.chamanois.dto;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import com.chamanois.model.Produtos;
+import com.chamanois.model.Role;
 
-@Entity
-public class Usuarios {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UsuariosDTO {
 	private Long idUsuario;
 	private String nomeUsuario;
 	private String cpfUsuario;
@@ -27,31 +14,8 @@ public class Usuarios {
 	private String telefoneUsuario;
 	private String emailUsuario;
 	private String senhaUsuario;
-
-	@ManyToMany(mappedBy = "usuarios", cascade = { CascadeType.ALL })
-	private Set<Produtos> produtos = new HashSet<>();
-
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@JoinTable(name = "usuario_role", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_role"))
-	private List<Role> roles = new ArrayList<>();
-
-	public Usuarios() {
-
-	}
-
-	public Usuarios(Long idUsuario, String nomeUsuario, String cpfUsuario, String enderecoUsuario,
-			String telefoneUsuario, String emailUsuario, String senhaUsuario, Set<Produtos> produtos,
-			List<Role> roles) {
-		this.idUsuario = idUsuario;
-		this.nomeUsuario = nomeUsuario;
-		this.cpfUsuario = cpfUsuario;
-		this.enderecoUsuario = enderecoUsuario;
-		this.telefoneUsuario = telefoneUsuario;
-		this.emailUsuario = emailUsuario;
-		this.senhaUsuario = senhaUsuario;
-		this.produtos = produtos;
-		this.roles = roles;
-	}
+	private Set<Produtos> produtos;
+	private List<Role> roles;
 
 	public Long getIdUsuario() {
 		return idUsuario;

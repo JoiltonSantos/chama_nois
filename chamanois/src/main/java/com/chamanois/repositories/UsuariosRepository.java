@@ -7,5 +7,5 @@ import com.chamanois.model.Usuarios;
 
 @Repository
 public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
-
+	Usuarios findByEmailUsuario(String emailUsuario);
 }
