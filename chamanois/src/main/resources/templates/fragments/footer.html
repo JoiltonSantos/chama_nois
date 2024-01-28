@@ -16,9 +16,12 @@
 
 					<div class="col-md-4">
 						<h5>Informações :</h5>
-						<p>Sobre Nós</p>
-						<p>Política de Privacidade</p>
-						<p>Termos de Serviço</p>
+						<div class="mb-3">
+							<a th:href="@{/privacidade}" class="text-dark">Política de Privacidade</a>
+						</div>
+						<div>
+							<a th:href="@{/termos}" class="text-dark">Termos de Serviço</a>
+						</div>
 					</div>
 
 					<div class="col-md-4 d-flex">
