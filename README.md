@@ -100,6 +100,8 @@ chamanois
 │       │   ├── static
 │       │   │   └── styles
 │       │   │       ├── entrar.css
+│       │   │       ├── texto.css
+│       │   │       ├── sobreNos.css
 │       │   │       └── cadastro.css
 │       │   └── templates
 │       │       ├── fragments
@@ -119,6 +121,10 @@ chamanois
 │       │           │   ├── listarUsuarios.html
 │       │           │   └── cadastro.html
 │       │           ├── index.html
+│       │           ├── sobreNos.html
+│       │           ├── privacidade.html
+│       │           ├── termosServico.html
+│       │           ├── loginErro.html
 │       │           └── entrar.html
 │       │
 │       └── data.sql
